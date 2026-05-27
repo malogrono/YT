@@ -68,5 +68,5 @@ def run_script():
 
     subprocess.run(["bash", "-lc", cmd], check=False)
 
-    print("Staying alive for 12 hours...")
+    print("Staying alive for 4 hours...")
     time.sleep(60 * 60 * 4)
